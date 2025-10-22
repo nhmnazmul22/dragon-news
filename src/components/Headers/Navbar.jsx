@@ -1,14 +1,15 @@
 import { Link, NavLink } from "react-router";
 import UserImg from "../../assets/user.png";
+
 const Navbar = () => {
   return (
-    <div className="navbar">
+    <div className="navbar max-sm:flex-col">
       <div className="navbar-center flex flex-1">
         <ul className="menu items-center justify-center w-full menu-horizontal px-1">
           <li>
             <NavLink
               to="/"
-              className="hover: text-lg text-dark-500 bg-transparent"
+              className="text-base sm:text-lg text-dark-500 hover:bg-transparent"
             >
               Home
             </NavLink>
@@ -16,7 +17,7 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/"
-              className="hover: text-lg text-dark-500 bg-transparent"
+              className="text-base sm:text-lg text-dark-500 hover:bg-transparent"
             >
               About
             </NavLink>
@@ -24,7 +25,7 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/"
-              className="hover: text-lg text-dark-500 bg-transparent"
+              className="text-base sm:text-lg text-dark-500 hover:bg-transparent"
             >
               Career
             </NavLink>
@@ -41,7 +42,7 @@ const Navbar = () => {
         </figure>
         <Link
           to="/auth/login"
-          className="btn btn-primary text-white w-[140px] h-[44px] text-lg"
+          className="btn btn-primary text-white sm:w-[140px] h-[44px] text-lg"
         >
           Login
         </Link>
