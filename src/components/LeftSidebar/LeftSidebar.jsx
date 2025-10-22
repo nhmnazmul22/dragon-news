@@ -1,15 +1,22 @@
 import CategoryList from "./CategoryList";
 import { Suspense } from "react";
-import { fetchCategories } from "../../utilities/api";
+import { fetchCategories, fetchNewses } from "../../utilities/api";
+import LineSkeleton from "../Skeleton/LineSkeleton";
+import SideNewses from "./SideNewses";
+import CardSkeleton from "../Skeleton/CardSkeleton";
 
 const LeftSidebar = () => {
-  const promise = fetchCategories();
+  const categoriesPromise = fetchCategories();
+  const newsPromise = fetchNewses();
 
   return (
     <div>
       <div className="">
-        <Suspense fallback={<p>Loading...</p>}>
-          <CategoryList promise={promise}></CategoryList>
+        <Suspense fallback={<LineSkeleton />}>
+          <CategoryList promise={categoriesPromise}></CategoryList>
+        </Suspense>
+        <Suspense fallback={<CardSkeleton />}>
+          <SideNewses promise={newsPromise}></SideNewses>
         </Suspense>
       </div>
     </div>
