@@ -5,7 +5,7 @@ import { format } from "date-fns";
 
 const News = ({ news }) => {
   return (
-    <div key={news.id}>
+    <div>
       <figure className="h-[150px] w-full rounded-md overflow-hidden">
         <img
           src={news.thumbnail_url}

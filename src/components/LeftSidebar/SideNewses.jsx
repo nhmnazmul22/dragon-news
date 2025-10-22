@@ -11,7 +11,7 @@ const SideNewses = ({ promise }) => {
   return (
     <div className="mt-10 flex flex-col gap-5">
       {filteredNewses.map((news) => (
-        <News news={news}></News>
+        <News key={news.id} news={news}></News>
       ))}
     </div>
   );
